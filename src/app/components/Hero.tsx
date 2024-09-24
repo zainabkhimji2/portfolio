@@ -1,22 +1,23 @@
 
 "use client";
+
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import React, { useRef, useEffect } from "react";
 import lottie from "lottie-web";
+import animationData from "../assets/projects.json"; // Import JSON file properly
 
 function Hero() {
-  const animationData = require("../assets/projects.json");
   const [text] = useTypewriter({
     words: [
       "Hello, I am Zainab Khimji",
       " Full Stack Developer",
       " Frontend Developer",
       " Backend Developer",
-      
     ],
     loop: true,
     delaySpeed: 2000,
   });
+
   const container = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -26,17 +27,19 @@ function Hero() {
         renderer: "svg",
         loop: true,
         autoplay: true,
-        animationData: animationData,
+        animationData: animationData, // No need to import again, already imported above
       });
 
       return () => {
         lottie.destroy();
       };
     }
-  }, []);
+  }, [animationData]); // Include animationData in the dependency array
+
   const scrollToAbout = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
+
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };

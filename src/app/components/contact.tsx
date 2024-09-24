@@ -21,7 +21,7 @@ function Contact() {
         Contact
       </h3>
       
-      {/* Contact Details */}
+      
       <div className="flex flex-col space-y-5 items-center justify-center animate-slide-in">
         <div className="flex items-center space-x-5">
           <EnvelopeIcon className="h-8 w-8 text-blue-500 animate-pulse" />
@@ -29,13 +29,13 @@ function Contact() {
         </div>
         <div className="flex items-center space-x-5">
           <MapPinIcon className="h-8 w-8 text-blue-500 animate-pulse" />
-          <p className="text-lg md:text-xl text-white">Karachi, Sindh, Pakistan</p>
+          <p className="text-lg md:text-xl text-white">Karachi Sindh Pakistan</p>
         </div>
       </div>
 
-      {/* Contact Form */}
+   
       {isSubmitted ? (
-        <p className="text-xl text-green-400">Thanks for contacting me! I'll reply soon.</p>
+        <p className="text-xl text-green-400">Thanks for contacting me! Ill reply soon.</p>
       ) : (
         <form 
           onSubmit={handleFormSubmit} 
@@ -43,7 +43,7 @@ function Contact() {
           action="https://formspree.io/f/mpwagoqv" 
           method="POST"
         >
-          {/* Name */}
+         
           <div className="flex flex-col">
             <label htmlFor="name" className="text-white">Name</label>
             <input
@@ -56,7 +56,7 @@ function Contact() {
             />
           </div>
 
-          {/* Email */}
+      
           <div className="flex flex-col">
             <label htmlFor="email" className="text-white">Email</label>
             <input
@@ -69,7 +69,7 @@ function Contact() {
             />
           </div>
 
-          {/* Subject */}
+        
           <div className="flex flex-col">
             <label htmlFor="subject" className="text-white">Subject</label>
             <input
@@ -82,7 +82,6 @@ function Contact() {
             />
           </div>
 
-          {/* Message */}
           <div className="flex flex-col">
             <label htmlFor="message" className="text-white">Message</label>
             <textarea
@@ -94,7 +93,7 @@ function Contact() {
             ></textarea>
           </div>
 
-          {/* Submit Button */}
+         
           <button
             type="submit"
             className="bg-blue-500 text-white px-6 py-3 rounded-lg transition-transform duration-300 hover:scale-105 hover:bg-blue-600 disabled:opacity-50"
